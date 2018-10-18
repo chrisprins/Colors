@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+* {
+  box-sizing: border-box !important;
+}
+
+html,
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background-image: url(https://raw.githubusercontent.com/chrisprins/colors/master/Colors-v2.3/images/theme_ntp_background.png);
+}
+
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.search {
+  position: absolute;
+  width: 450px;
+  height: 70px;
+}
+
+.search span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 70px;
+  width: 70px;
+  border: 4px solid #00adef;
+  background-color: #00adef;
+  border-radius: 100%;
+  cursor: pointer;
+  -webkit-transform: translate(-50%, -50%) rotate(-30deg);
+  transform: translate(-50%, -50%) rotate(-30deg);
+  transition: left 0.25s 0.25s ease, border-radius 0.25s 0.25s ease,
+    -webkit-transform 0.25s 0.75s ease;
+  transition: transform 0.25s 0.75s ease, left 0.25s 0.25s ease,
+    border-radius 0.25s 0.25s ease;
+  transition: transform 0.25s 0.75s ease, left 0.25s 0.25s ease,
+    border-radius 0.25s 0.25s ease, -webkit-transform 0.25s 0.75s ease;
+  z-index: 2;
+}
+
+.search span:after {
+  content: "";
+  position: inherit;
+  top: 65px;
+  left: 27px;
+  height: 45px;
+  width: 8px;
+  background: #00adef;
+  transition: all 0.25s 0.5s ease;
+  z-index: 2;
+}
+
+.search .BgOpacity {
+  position: absolute;
+  top: -45px;
+  left: calc(50% - 80px);
+  height: 160px;
+  border-radius: 80px;
+  width: 160px;
+  background-color: #ff0000;
+  z-index: -1;
+  transition: all 0.25s 0.5s ease;
+  border: 1px solid white;
+}
+
+.search button {
+  position: absolute;
+  left: calc(100% - 70px);
+  top: 8px;
+  height: calc(100% - (4px * 4));
+  width: 70px;
+  background: none;
+  border: 0;
+  border-radius: 70px;
+  font-size: 22px;
+  color: #fff800;
+  outline: none;
+  transition: all 0.25s ease;
+  visibility: hidden;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.search input {
+  width: 100%;
+  height: 100%;
+  padding: 13px 78px 15px 25px;
+  background: none;
+  border: 0;
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.25s ease;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.search.active span {
+  height: 70px;
+  border-radius: 70px;
+  left: 92%;
+  cursor: initial;
+  -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transition: left 0.25s 0.5s ease, border-radius 0.25s 0.5s ease,
+    -webkit-transform 0.25s ease;
+  transition: transform 0.25s ease, left 0.25s 0.5s ease,
+    border-radius 0.25s 0.5s ease;
+  transition: transform 0.25s ease, left 0.25s 0.5s ease,
+    border-radius 0.25s 0.5s ease, -webkit-transform 0.25s ease;
+}
+
+.search.active span:after {
+  height: 0;
+  transition-delay: 0.25s;
+}
+
+.search.active button {
+  visibility: visible;
+  opacity: 1;
+  z-index: 2;
+  transition-delay: 0.75s;
+}
+.search.active input {
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.75s;
+}
+
+.search.active .BgOpacity {
+  width: 540px;
+  left: calc(50% - 270px);
+  height: 69px;
+  width: 449px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #ffffff;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #ffffff;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #ffffff;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #ffffff;
+}
+
+.search.active .searchButton {
+  position:absolute;
+  width:26px;
+  height:26px;
+  left:calc(50% - 13px);
+  top:calc(50% - 13px);
+  background-color:#ffffff;
+  border-radius:100%;
+  transform: rotate(-30deg);
+  transition: transform 0.5s;
+  transition-delay: 1s;
+}
+
+.search.active .searchButton:after{
+      content: "";
+    position: absolute;
+    height: 26px;
+    width: 5px;
+    background-color: #ffffff;
+    left: 11px;
+    margin-top: 22px;
+  transition: height 0.5s;
+  transition-delay:0.75s;
+}
+
+.search .searchButton {
+  position:absolute;
+  width:0px;
+  height:0px;
+  left:calc(50% - 13px);
+  top:calc(50% - 13px);
+  background-color:#ffffff;
+  border-radius:100%;
+  transform: rotate(-90deg);
+}
+
+.search .searchButton:after{
+    content: "";
+    position: absolute;
+    height: 0px;
+    width: 5px;
+    background-color: #ffffff;
+    left: 11px;
+    margin-top: 22px;
+}
