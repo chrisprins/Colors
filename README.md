@@ -1,5 +1,6 @@
 # Colors
-A colorful 'paint splashes' Google chrome theme. The theme is suitable for desktops with a screen resolution of up to 2560x1600.  
+A multicolour 'paint splashes' design for the Google chrome browser. Repo includes the *Theme* and *NewTab extension*, links below:
 
-Available in the Chrome Webstore: 
-https://chrome.google.com/webstore/detail/colors/lhbgjlhhonbdjfdoiklbbkejcipkbnac
+[Theme Repo:](https://github.com/chrisprins/colors/tree/master/Colors-Theme)
+[NewTab Repo:](https://github.com/chrisprins/colors/tree/master/Colors-NewTab)
+[NewTab Demo:](https://chrisprins.github.io/colors/Colors-NewTab/)
