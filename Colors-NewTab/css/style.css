@@ -91,7 +91,7 @@ div span {
 
 /* Clock */
 .clock {
-  border: 5px solid rgba(255, 255, 255, 0.8);
+  border: 5px solid rgba(255, 255, 255, 1);
   border-radius: 100%;
   display: block;
   height: 0px;
@@ -112,7 +112,7 @@ div span {
   right: 80px;
 }
 .clock .hour {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 1);
   height: 0;
   left: 50%;
   position: absolute;
@@ -123,8 +123,8 @@ div span {
   -o-transform-origin: 50% 100%;
   -ms-transform-origin: 50% 100%;
   transform-origin: 50% 100%;
-  margin: -40px -2px 0;
-  padding: 40px 2px 0;
+  margin: -50px -2px 0;
+  padding: 50px 2px 0;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -138,7 +138,7 @@ div span {
 }
 
 .clock .minute {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 1);
   height: 0;
   left: 50%;
   position: absolute;
@@ -149,8 +149,8 @@ div span {
   -o-transform-origin: 50% 100%;
   -ms-transform-origin: 50% 100%;
   transform-origin: 50% 100%;
-  margin: -60px -2px 0;
-  padding: 60px 2px 0;
+  margin: -80px -2px 0;
+  padding: 80px 2px 0;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
