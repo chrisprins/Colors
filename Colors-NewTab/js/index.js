@@ -1,21 +1,6 @@
-$("form").submit(function(e) {
-  e.preventDefault();
-  if ($(this).hasClass("active")) $(this).removeClass("active");
-});
-
-$(".search span").click(function(e) {
-  var $parent = $(this).parent();
-
-  if (!$parent.hasClass("active")) {
-    $parent
-      .addClass("active")
-      .find("input:first")
-      .on("blur", function() {
-        if (!$(this).val().length) $parent.removeClass("active");
-      });
-  }
-});
-
+//-------------------------------------
+// Letters
+//-------------------------------------
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
@@ -187,7 +172,7 @@ function draw() {
   }
   requestAnimationFrame(draw);
 }
-var start_keys = [81, 87, 69, 82, 84, 89, 85, 73, 79, 80];
+var start_keys = []; //81, 87, 69, 82, 84, 89, 85, 73, 79, 80
 
 function startAnimation() {
   setTimeout(function() {
@@ -237,10 +222,84 @@ window.requestAnimationFrame = (function() {
   );
 })();
 
-var delayInMilliseconds = 1700; //1.5 seconds
 
-$("form").addClass("active");
-setTimeout(function() {
-  $("form").removeClass("active");
-  $("input").attr("placeholder", "Search Google");
-}, delayInMilliseconds);
+//-----------------------------------
+// Clock / Search Bar
+//------------------------------------
+
+var input = document.getElementById("input");
+var button = document.getElementById("button");
+var icon = document.getElementById("icon");
+var wrapper = document.getElementById("wrapper");
+var clockFrame = document.getElementsByClassName("clock");
+var state = 0;
+
+// Clock
+function clock() {
+  if (state === 0) {
+    var t = moment(),
+    a = t.minutes() * 6,
+    o = (t.hours() % 12) / 12 * 360 + a / 12;
+    $(".hour").css("transform", "rotate(" + o + "deg)");
+    $(".minute").css("transform", "rotate(" + a + "deg)");
+  }
+}
+function refreshClock() {
+  clock(), setTimeout(refreshClock, 1000);
+};
+refreshClock();
+
+$("#button").mouseenter(function() {
+// Opening
+  if(state === 0){
+  state = 1;
+    button.style.width = "600px";
+  button.style.height = "150px";
+  button.style.WebkitAnimationPlayState = "paused";
+  button.style.animationPlayState = "paused";
+  $(".clock").addClass("open");
+  $(".hour").css("transform", "");
+  $(".hour").addClass("open");
+  $(".minute").css("transform", "");
+  $(".minute").addClass("open");
+  $("#input").css("width", "370px");
+   };
+});
+
+$("#button").mouseleave(function() {
+// Closing
+  if(state === 1){
+  state = 0
+  button.style.width = null;
+  button.style.height = null;
+  button.style.WebkitAnimationPlayState = null;
+  button.style.animationPlayState = null;
+  $("#input").css("width", "0");
+  $(".clock").removeClass("open");
+  $(".hour").removeClass("open");
+  $(".minute").removeClass("open");
+  refreshClock();
+  };
+  
+});
+
+input.onfocus = function() {
+  state = 2;
+  button.style.width = "600px";
+  button.style.height = "150px";
+  button.style.WebkitAnimationPlayState = "paused";
+  button.style.animationPlayState = "paused";
+};
+
+input.onblur = function() {
+  state = 0
+  button.style.width = null;
+  button.style.height = null;
+  button.style.WebkitAnimationPlayState = null;
+  button.style.animationPlayState = null;
+  $("#input").css("width", "0");
+  $(".clock").removeClass("open");
+  $(".hour").removeClass("open");
+  $(".minute").removeClass("open");
+  refreshClock();
+};
