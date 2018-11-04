@@ -207,7 +207,7 @@ document.getElementById("input").onkeydown = function(event) {
   }
 };
 
-document.getElementById("input").focus();
+//document.getElementById("input").focus();
 
 window.requestAnimationFrame = (function() {
   return (
