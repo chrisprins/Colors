@@ -91,7 +91,7 @@ div span {
 
 /* Clock */
 .clock {
-  border: 5px solid rgba(255, 255, 255, 1);
+  border: 5px solid rgb(152, 11, 169);
   border-radius: 100%;
   display: block;
   height: 0px;
@@ -112,7 +112,7 @@ div span {
   right: 80px;
 }
 .clock .hour {
-  background: rgba(255, 255, 255, 1);
+  background: rgb(152, 11, 169);
   height: 0;
   left: 50%;
   position: absolute;
@@ -138,7 +138,7 @@ div span {
 }
 
 .clock .minute {
-  background: rgba(255, 255, 255, 1);
+  background: rgb(152, 11, 169);
   height: 0;
   left: 50%;
   position: absolute;
@@ -178,7 +178,7 @@ div span {
   background-color: transparent;
   border: none;
   opacity: 1;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgb(152, 11, 169);
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
@@ -300,5 +300,3 @@ button {
     filter: hue-rotate(270deg);
   }
 }
-
-/*- Smiley --*/
