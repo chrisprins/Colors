@@ -3,9 +3,9 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url("https://fonts.googleapis.com/css?family=Homemade+Apple");
 
-*{
+* {
   font-family: "Roboto", sans-serif;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 input[type="search"]::-webkit-search-cancel-button {
@@ -29,7 +29,7 @@ body {
   justify-content: center;
   margin: 0;
   overflow: hidden;
-  background:url(https://raw.githubusercontent.com/chrisprins/colors/master/Colors-NewTab/colors.png);
+  background: url(https://raw.githubusercontent.com/chrisprins/colors/master/Colors-NewTab/colors.png);
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ffffff;
@@ -60,7 +60,7 @@ div span {
 /*- Button -*/
 
 #button {
-  position:absolute;
+  position: absolute;
   display: flex;
   align-content: center;
   align-items: center;
@@ -77,7 +77,7 @@ div span {
   cursor: pointer;
   -webkit-transition: width 0.5s, height 0.5s;
   transition: width 0.5s, height 0.5s;
-  z-index:999;
+  z-index: 999;
   top: calc(50% - 100px);
 }
 
@@ -278,7 +278,7 @@ button {
   }
   50% {
     border-radius: 50% 50% 33% 67%/55% 27% 73% 45%;
-   /* box-shadow: 15px 25px 50px rgba(0, 0, 0, 0.6);*/
+    /* box-shadow: 15px 25px 50px rgba(0, 0, 0, 0.6);*/
   }
   75% {
     border-radius: 33% 67% 58% 42%/63% 68% 32% 37%;
@@ -301,57 +301,4 @@ button {
   100% {
     filter: hue-rotate(360deg);
   }
-}
-/*- Heading -*/
-
-
-.container2 {
-  position: absolute;
-  top: 20%;
-  /*left: calc(50%);*/
-  transform: translate(-50%, -50%);
-}
-
-.textwrapper {
-  position: absolute;
-  top: -200px;
-  left: -200px;
-  z-index: 100;
-}
-.textwrapper p, .textwrapper p span {
-  font-family: 'Homemade Apple', cursive;
-  color:#e0e0e0;
-  font-size: 120px;
-  letter-spacing: 0px;
-}
-
-.wrapper2 {
-  position: absolute;
-  z-index: 5;
-  left: -87px;
-  top: 4px;
-}
-
-#one {
-  color:#6465f9;
-}
-
-#two {
-  color:#0048e8;
-}
-
-#three {
-  color:#00adee;
-}
-
-#four {
-  color:#54a909;
-}
-
-#five {
-  color:#f6d00a;
-}
-
-#six {
-  color:#ee1b24;
 }
