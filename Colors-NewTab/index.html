@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>A Pen by  Chris</title>
+  <title>Colors: New Tab</title>
   
   
   
@@ -15,7 +15,6 @@
 <body>
 
   <canvas id="canvas">Your browser does not support the HTML5 canvas tag.</canvas>
-<div id="wrapper">
   <div id="button">
     <span id="inner">
       <!-- Input -->
@@ -27,9 +26,55 @@
       <div class="minute"></div>
   </div>
 </div>
-      <!-- Smiley -->
-    
 	</span>
+  </div>
+<!-- Heading -->
+<div class="container2">
+  <div class="textwrapper">
+    <p><span id="one">C</span><span id ="two">o</span><span id="three">l</span><span id="four">o</span><span id="five">r</span><span id="six">s</span></p>
+  </div>
+  <div class="wrapper2">
+    <div class="ball">
+      <div class="smallball move1"></div>
+      <div class="smallball move2"></div>
+      <div class="smallball move3"></div>
+      <div class="smallball move4"></div>
+      <div class="smallball move5"></div>
+      <div class="smallball move6"></div>
+      <div class="smallball move7"></div>
+      <div class="smallball move8"></div>
+      <div class="greenball move9"></div>
+      <div class="greenball move10"></div>
+      <div class="greenball move11"></div>
+      <div class="greenball move12"></div>
+      <div class="greenball move13"></div>
+      <div class="greenball move14"></div>
+      <div class="greenball move15"></div>
+      <div class="greenball move16"></div>
+      <div class="blueball move17"></div>
+      <div class="blueball move18"></div>
+      <div class="blueball move19"></div>
+      <div class="blueball move20"></div>
+      <div class="blueball move21"></div>
+      <div class="blueball move22"></div>
+      <div class="blueball move23"></div>
+      <div class="yellowball move24"></div>
+      <div class="yellowball move25"></div>
+      <div class="yellowball move26"></div>
+      <div class="yellowball move27"></div>
+      <div class="yellowball move29"></div>
+      <div class="yellowball move30"></div>
+      <div class="yellowball move31"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <fegaussianblur in="SourceGraphic" stddeviation="2" result="blur"></fegaussianblur>
+            <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 9 0 0  0 0 0 18 -7" result="goo"></fecolormatrix>
+            <feblend in="SourceGraphic" in2="goo"></feblend>
+          </filter>
+        </defs>
+      </svg>
+    </div>
   </div>
 </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
