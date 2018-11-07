@@ -222,7 +222,6 @@ window.requestAnimationFrame = (function() {
   );
 })();
 
-
 //-----------------------------------
 // Clock / Search Bar
 //------------------------------------
@@ -232,55 +231,56 @@ var button = document.getElementById("button");
 var icon = document.getElementById("icon");
 var wrapper = document.getElementById("wrapper");
 var clockFrame = document.getElementsByClassName("clock");
+var inputValue = input.value;
+var google = "https://www.google.com/search?q=";
 var state = 0;
 
 // Clock
 function clock() {
   if (state === 0) {
     var t = moment(),
-    a = t.minutes() * 6,
-    o = (t.hours() % 12) / 12 * 360 + a / 12;
+      a = t.minutes() * 6,
+      o = (t.hours() % 12) / 12 * 360 + a / 12;
     $(".hour").css("transform", "rotate(" + o + "deg)");
     $(".minute").css("transform", "rotate(" + a + "deg)");
   }
 }
 function refreshClock() {
   clock(), setTimeout(refreshClock, 1000);
-};
+}
 refreshClock();
 
 $("#button").mouseenter(function() {
-// Opening
-  if(state === 0){
-  state = 1;
+  // Opening
+  if (state === 0) {
+    state = 1;
     button.style.width = "600px";
-  button.style.height = "150px";
-  button.style.WebkitAnimationPlayState = "paused";
-  button.style.animationPlayState = "paused";
-  $(".clock").addClass("open");
-  $(".hour").css("transform", "");
-  $(".hour").addClass("open");
-  $(".minute").css("transform", "");
-  $(".minute").addClass("open");
-  $("#input").css("width", "370px");
-   };
+    button.style.height = "150px";
+    button.style.WebkitAnimationPlayState = "paused";
+    button.style.animationPlayState = "paused";
+    $(".clock").addClass("open");
+    $(".hour").css("transform", "");
+    $(".hour").addClass("open");
+    $(".minute").css("transform", "");
+    $(".minute").addClass("open");
+    $("#input").css("width", "370px");
+  }
 });
 
 $("#button").mouseleave(function() {
-// Closing
-  if(state === 1){
-  state = 0
-  button.style.width = null;
-  button.style.height = null;
-  button.style.WebkitAnimationPlayState = null;
-  button.style.animationPlayState = null;
-  $("#input").css("width", "0");
-  $(".clock").removeClass("open");
-  $(".hour").removeClass("open");
-  $(".minute").removeClass("open");
-  refreshClock();
-  };
-  
+  // Closing
+  if (state === 1) {
+    state = 0;
+    button.style.width = null;
+    button.style.height = null;
+    button.style.WebkitAnimationPlayState = null;
+    button.style.animationPlayState = null;
+    $("#input").css("width", "0");
+    $(".clock").removeClass("open");
+    $(".hour").removeClass("open");
+    $(".minute").removeClass("open");
+    refreshClock();
+  }
 });
 
 input.onfocus = function() {
@@ -292,7 +292,7 @@ input.onfocus = function() {
 };
 
 input.onblur = function() {
-  state = 0
+  state = 0;
   button.style.width = null;
   button.style.height = null;
   button.style.WebkitAnimationPlayState = null;
@@ -303,3 +303,11 @@ input.onblur = function() {
   $(".minute").removeClass("open");
   refreshClock();
 };
+
+// Search Google - NO TRACKING!!!!! 
+input.addEventListener("keyup", function(event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+     window.location = google + escape(input.value);
+  }
+});
