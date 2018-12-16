@@ -1,4 +1,4 @@
-# Colors NewTab
+# Colors NewTab V 0.2.1
 
 A minimalist & interactive NewTab for Google Chrome.
 
