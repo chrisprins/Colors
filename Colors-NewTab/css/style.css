@@ -1,7 +1,6 @@
 /*- Global -*/
 
 @import url("https://fonts.googleapis.com/css?family=Roboto");
-@import url("https://fonts.googleapis.com/css?family=Homemade+Apple");
 
 * {
   font-family: "Roboto", sans-serif;
@@ -29,7 +28,7 @@ body {
   justify-content: center;
   margin: 0;
   overflow: hidden;
-  background: url(https://raw.githubusercontent.com/chrisprins/colors/master/Colors-NewTab/colors.png);
+  background: url(/images/colors.png);
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ffffff;
@@ -47,14 +46,6 @@ div span {
   margin: auto;
   width: 100%;
   height: 100%;
-  /*background-image: linear-gradient(
-      #ffffff55 0%,
-      #ffffff00 10%,
-      #00000000 90%,
-      #00000055 100%
-    ),
-    radial-gradient(#ffffff00 0%, #ffffff00 75%, #000000a8 100%);
-  background-blend-mode: multiply;*/
 }
 
 /*- Button -*/
@@ -80,14 +71,6 @@ div span {
   z-index: 999;
   top: calc(50% - 100px);
 }
-
-/*#button:hover {
-  animation-play-state: paused;
-  width: 600px;
-  height: 150px;
-  -webkit-transition: width 0.5s, height 0.5s;
-  transition: width 0.5s, height 0.5s;
-}*/
 
 /* Clock */
 .clock {
